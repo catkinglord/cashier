@@ -4,13 +4,13 @@
  * 测试小票打印-打印一行重复字符
  * 2016年3月5日下午1:14:54
  */
-package com.ralvis.cashier.print;
+package com.ralvis.cashier.print.printer;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.ralvis.cashier.base.BaseTestNG;
-import com.ralvis.cashier.print.service.LinePrinter;
-import com.ralvis.cashier.print.service.impl.RepeatSymbolLinePrinter;
+import com.ralvis.cashier.print.lineprinter.LinePrinter;
+import com.ralvis.cashier.print.lineprinter.RepeatSymbolLinePrinter;
 
 public class RepeatSymbolLinePrinterTest extends BaseTestNG{
 	@Test

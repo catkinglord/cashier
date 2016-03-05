@@ -4,10 +4,9 @@
  * 打印小票-输出名称格式-例如-名称: 苹果
  * 2016年3月5日下午4:03:09
  */
-package com.ralvis.cashier.print.service.impl;
+package com.ralvis.cashier.print.printer;
 
 import org.apache.commons.lang.StringUtils;
-import com.ralvis.cashier.print.service.Printer;
 
 public class KeyValuePrinter implements Printer{
 	private final static String UNKONW_VALUE = "未知";

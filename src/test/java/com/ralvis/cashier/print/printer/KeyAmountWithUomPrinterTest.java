@@ -4,13 +4,13 @@
  * 测试小票打印-打印数量-例如数量: 2个
  * 2016年3月5日下午5:03:54
  */
-package com.ralvis.cashier.print;
+package com.ralvis.cashier.print.printer;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.ralvis.cashier.base.BaseTestNG;
-import com.ralvis.cashier.print.service.Printer;
-import com.ralvis.cashier.print.service.impl.KeyAmountWithUomPrinter;
+import com.ralvis.cashier.print.printer.KeyAmountWithUomPrinter;
+import com.ralvis.cashier.print.printer.Printer;
 
 public class KeyAmountWithUomPrinterTest extends BaseTestNG{
 	

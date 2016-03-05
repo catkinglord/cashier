@@ -6,9 +6,15 @@
     </classes>
   </test>
   
-  <test name="testPrint">
+  <test name="testBasePrinter">
     <packages>
-    	<package name="com.ralvis.cashier.print"></package>
+    	<package name="com.ralvis.cashier.print.printer"></package>
+    </packages>
+  </test>
+  
+  <test name="testLinePrinter">
+    <packages>
+    	<package name="com.ralvis.cashier.print.lineprinter"></package>
     </packages>
   </test>
   

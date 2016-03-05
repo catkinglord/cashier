@@ -4,10 +4,9 @@
  * 打印小票-输出名称数量单位格式-例如-数量: 2斤
  * 2016年3月5日下午4:40:35
  */
-package com.ralvis.cashier.print.service.impl;
+package com.ralvis.cashier.print.printer;
 
 import org.apache.commons.lang.StringUtils;
-import com.ralvis.cashier.print.service.Printer;
 
 public class KeyAmountWithUomPrinter implements Printer{
 	private static final String UNKONW_UOM = "";

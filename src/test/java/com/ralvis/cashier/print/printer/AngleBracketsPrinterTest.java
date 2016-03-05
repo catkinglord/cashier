@@ -4,13 +4,13 @@
  * 测试小票打印-打印尖括号名称
  * 2016年3月5日下午3:36:03
  */
-package com.ralvis.cashier.print;
+package com.ralvis.cashier.print.printer;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.ralvis.cashier.base.BaseTestNG;
-import com.ralvis.cashier.print.service.Printer;
-import com.ralvis.cashier.print.service.impl.AngleBracketsPrinter;
+import com.ralvis.cashier.print.printer.AngleBracketsPrinter;
+import com.ralvis.cashier.print.printer.Printer;
 
 public class AngleBracketsPrinterTest extends BaseTestNG{
 	@Test

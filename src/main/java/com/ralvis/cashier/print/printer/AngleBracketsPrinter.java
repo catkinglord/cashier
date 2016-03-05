@@ -4,10 +4,9 @@
  * 打印小票-尖括号输出名称-例如<name>
  * 2016年3月5日下午3:38:03
  */
-package com.ralvis.cashier.print.service.impl;
+package com.ralvis.cashier.print.printer;
 
 import org.apache.commons.lang.StringUtils;
-import com.ralvis.cashier.print.service.Printer;
 
 public class AngleBracketsPrinter implements Printer{
 	private String name;

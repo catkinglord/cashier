@@ -4,13 +4,11 @@
  * 打印小票-输出名称金额单位格式-例如-单价: 2.00(元)
  * 2016年3月5日下午5:19:20
  */
-package com.ralvis.cashier.print.service.impl;
+package com.ralvis.cashier.print.printer;
 
 import java.math.BigDecimal;
 
 import org.apache.commons.lang.StringUtils;
-
-import com.ralvis.cashier.print.service.Printer;
 
 public class KeyMoneyWithUomPrinter implements Printer{
 	private static final String UNKONW_UOM = "元";

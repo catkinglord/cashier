@@ -4,15 +4,15 @@
  * 测试小票打印-打印节省金额-例如节省2.00(元) 
  * 2016年3月5日下午5:57:45
  */
-package com.ralvis.cashier.print;
+package com.ralvis.cashier.print.printer;
 
 import java.math.BigDecimal;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.ralvis.cashier.base.BaseTestNG;
-import com.ralvis.cashier.print.service.Printer;
-import com.ralvis.cashier.print.service.impl.TrimedKeyMoneyWithUomPrinter;
+import com.ralvis.cashier.print.printer.Printer;
+import com.ralvis.cashier.print.printer.TrimedKeyMoneyWithUomPrinter;
 
 public class TrimedKeyMoneyWithUomPrinterTest extends BaseTestNG{
 
