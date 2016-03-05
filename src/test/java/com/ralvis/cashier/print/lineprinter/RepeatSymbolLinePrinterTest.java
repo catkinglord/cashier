@@ -4,7 +4,7 @@
  * 测试小票打印-打印一行重复字符
  * 2016年3月5日下午1:14:54
  */
-package com.ralvis.cashier.print.printer;
+package com.ralvis.cashier.print.lineprinter;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
