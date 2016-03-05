@@ -1,7 +1,7 @@
 /**
  * @author elvis.zhang
  * Description:
- * 测试小票打印-打印金额-例如单价: 2.00(元) 
+ * 测试小票打印-打印金额-例如单价：2.00(元) 
  * 2016年3月5日下午5:15:45
  */
 package com.ralvis.cashier.print.printer;
@@ -56,48 +56,48 @@ public class KeyMoneyWithUomPrinterTest extends BaseTestNG{
 	public void testPrintDecimalZeroMoneyGT1() {
 		Printer printer = new KeyMoneyWithUomPrinter("单价", new BigDecimal("1.024"), 0, "元");
 		String line = printer.print();
-		Assert.assertEquals(line, "单价: 1(元)");
+		Assert.assertEquals(line, "单价：1(元)");
 	}
 	
 	@Test
 	public void testPrintDecimalZeroMoneyEQ1() {
 		Printer printer = new KeyMoneyWithUomPrinter("单价", BigDecimal.ONE, 0, "元");
 		String line = printer.print();
-		Assert.assertEquals(line, "单价: 1(元)");
+		Assert.assertEquals(line, "单价：1(元)");
 	}
 	
 	@Test
 	public void testPrintDecimalZeroMoneyLT1() {
 		Printer printer = new KeyMoneyWithUomPrinter("单价", new BigDecimal("0.024"), 0, "元");
 		String line = printer.print();
-		Assert.assertEquals(line, "单价: 0(元)");
+		Assert.assertEquals(line, "单价：0(元)");
 	}
 	
 	@Test
 	public void testPrintDecimalPositive1() {
 		Printer printer = new KeyMoneyWithUomPrinter("单价", new BigDecimal("1.2345"), 1, "元");
 		String line = printer.print();
-		Assert.assertEquals(line, "单价: 1.2(元)");
+		Assert.assertEquals(line, "单价：1.2(元)");
 	}
 	
 	@Test
 	public void testPrintDecimalPositive2() {
 		Printer printer = new KeyMoneyWithUomPrinter("单价", new BigDecimal("1.2345"), 2, "元");
 		String line = printer.print();
-		Assert.assertEquals(line, "单价: 1.23(元)");
+		Assert.assertEquals(line, "单价：1.23(元)");
 	}
 	
 	@Test
 	public void testPrintUomNull() {
 		Printer printer = new KeyMoneyWithUomPrinter("单价", new BigDecimal("0.2345"), 2, null);
 		String line = printer.print();
-		Assert.assertEquals(line, "单价: 0.23(元)");
+		Assert.assertEquals(line, "单价：0.23(元)");
 	}
 	
 	@Test
 	public void testPrintUomEmpty() {
 		Printer printer = new KeyMoneyWithUomPrinter("单价", new BigDecimal("0.2345"), 2, "");
 		String line = printer.print();
-		Assert.assertEquals(line, "单价: 0.23(元)");
+		Assert.assertEquals(line, "单价：0.23(元)");
 	}
 }

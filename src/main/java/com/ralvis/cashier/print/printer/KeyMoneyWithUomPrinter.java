@@ -43,7 +43,7 @@ public class KeyMoneyWithUomPrinter implements Printer{
 	@Override
 	public String print() {
 		String moneyFormat = String.format("%%.%df", decimals);
-		String format = String.format("%%s: %s(%%s)", moneyFormat);
+		String format = String.format("%%s：%s(%%s)", moneyFormat);
 		return String.format(format, key, money.doubleValue(), uom);
 	}
 }

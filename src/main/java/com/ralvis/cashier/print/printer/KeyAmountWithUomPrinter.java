@@ -34,7 +34,7 @@ public class KeyAmountWithUomPrinter implements Printer{
 	
 	@Override
 	public String print() {
-		return String.format("%s: %d%s", key, amount, uom);
+		return String.format("%s：%d%s", key, amount, uom);
 	}
 
 }

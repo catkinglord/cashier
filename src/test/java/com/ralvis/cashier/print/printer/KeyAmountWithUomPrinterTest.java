@@ -1,7 +1,7 @@
 /**
  * @author elvis.zhang
  * Description: 
- * 测试小票打印-打印数量-例如数量: 2个
+ * 测试小票打印-打印数量-例如数量：2个
  * 2016年3月5日下午5:03:54
  */
 package com.ralvis.cashier.print.printer;
@@ -42,20 +42,20 @@ public class KeyAmountWithUomPrinterTest extends BaseTestNG{
 	public void testCustomPrint() {
 		Printer printer = new KeyAmountWithUomPrinter("数量", 2, "个");
 		String line = printer.print();
-		Assert.assertEquals(line, "数量: 2个");
+		Assert.assertEquals(line, "数量：2个");
 	}
 	
 	@Test
 	public void testPrintUomNull() {
 		Printer printer = new KeyAmountWithUomPrinter("数量", 2, null);
 		String line = printer.print();
-		Assert.assertEquals(line, "数量: 2");
+		Assert.assertEquals(line, "数量：2");
 	}
 	
 	@Test
 	public void testPrintUomEmpty() {
 		Printer printer = new KeyAmountWithUomPrinter("数量", 2, "");
 		String line = printer.print();
-		Assert.assertEquals(line, "数量: 2");
+		Assert.assertEquals(line, "数量：2");
 	}
 }

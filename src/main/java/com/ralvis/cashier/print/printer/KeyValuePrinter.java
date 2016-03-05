@@ -27,7 +27,7 @@ public class KeyValuePrinter implements Printer{
 	
 	@Override
 	public String print() {
-		return String.format("%s: %s", key, value);
+		return String.format("%s：%s", key, value);
 	}
 
 }

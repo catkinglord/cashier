@@ -1,7 +1,7 @@
 /**
  * @author elvis.zhang
  * Description: 
- * 测试小票打印-打印名称-例如名称: 苹果
+ * 测试小票打印-打印名称-例如名称：苹果
  * 2016年3月5日下午4:00:54
  */
 package com.ralvis.cashier.print.printer;
@@ -30,20 +30,20 @@ public class KeyValuePrinterTest extends BaseTestNG{
 	public void testPrintValueNull() {
 		Printer printer = new KeyValuePrinter("名称", null);
 		String line = printer.print();
-		Assert.assertEquals(line, "名称: 未知");
+		Assert.assertEquals(line, "名称：未知");
 	}
 	
 	@Test
 	public void testPrintValueEmpty() {
 		Printer printer = new KeyValuePrinter("名称", "");
 		String line = printer.print();
-		Assert.assertEquals(line, "名称: 未知");
+		Assert.assertEquals(line, "名称：未知");
 	}
 	
 	@Test
 	public void testCustomPrint() {
 		Printer printer = new KeyValuePrinter("名称", "苹果");
 		String line = printer.print();
-		Assert.assertEquals(line, "名称: 苹果");
+		Assert.assertEquals(line, "名称：苹果");
 	}
 }
