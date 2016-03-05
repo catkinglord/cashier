@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="testCashier">
+  <test name="testEnv">
+    <classes>
+      <class name="com.ralvis.cashier.base.HelloWorldTest"/>
+    </classes>
+  </test>
+  
+  <test name="testPrint">
+    <packages>
+    	<package name="com.ralvis.cashier.print"></package>
+    </packages>
+  </test>
+  
+  
+</suite>
