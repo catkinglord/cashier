@@ -53,10 +53,24 @@ public class KeyMoneyWithUomPrinterTest extends BaseTestNG{
 	}
 	
 	@Test
-	public void testPrintDecimalZero() {
+	public void testPrintDecimalZeroMoneyGT1() {
+		Printer printer = new KeyMoneyWithUomPrinter("单价", new BigDecimal("1.024"), 0, "元");
+		String line = printer.print();
+		Assert.assertEquals(line, "单价: 1(元)");
+	}
+	
+	@Test
+	public void testPrintDecimalZeroMoneyEQ1() {
 		Printer printer = new KeyMoneyWithUomPrinter("单价", BigDecimal.ONE, 0, "元");
 		String line = printer.print();
 		Assert.assertEquals(line, "单价: 1(元)");
+	}
+	
+	@Test
+	public void testPrintDecimalZeroMoneyLT1() {
+		Printer printer = new KeyMoneyWithUomPrinter("单价", new BigDecimal("0.024"), 0, "元");
+		String line = printer.print();
+		Assert.assertEquals(line, "单价: 0(元)");
 	}
 	
 	@Test
