@@ -16,35 +16,35 @@ public class RepeatSymbolLinePrinterTest extends BaseTestNG{
 	@Test
 	public void testDefaultGenerateLine() {
 		LinePrinter printer = new RepeatSymbolLinePrinter();
-		String line = printer.generateLine();
+		String line = printer.print();
 		Assert.assertEquals(line, "----------------------");
 	}
 	
 	@Test
 	public void testCustomerGenerateLineNegative() {
 		LinePrinter printer = new RepeatSymbolLinePrinter(-1, '*');
-		String line = printer.generateLine();
+		String line = printer.print();
 		Assert.assertEquals(line, "");
 	}
 	
 	@Test
 	public void testCustomerGenerateLineZero() {
 		LinePrinter printer = new RepeatSymbolLinePrinter(0, '*');
-		String line = printer.generateLine();
+		String line = printer.print();
 		Assert.assertEquals(line, "");
 	}
 	
 	@Test
 	public void testCustomerGenerateLinePositiveStar() {
 		LinePrinter printer = new RepeatSymbolLinePrinter(3, '*');
-		String line = printer.generateLine();
+		String line = printer.print();
 		Assert.assertEquals(line, "***");
 	}
 	
 	@Test
 	public void testCustomerGenerateLinePositiveDash() {
 		LinePrinter printer = new RepeatSymbolLinePrinter(4, '-');
-		String line = printer.generateLine();
+		String line = printer.print();
 		Assert.assertEquals(line, "----");
 	}
 }

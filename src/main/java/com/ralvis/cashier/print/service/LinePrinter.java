@@ -6,6 +6,6 @@
  */
 package com.ralvis.cashier.print.service;
 
-public interface LinePrinter {
-	String generateLine();
+public interface LinePrinter extends Printer {
+	
 }

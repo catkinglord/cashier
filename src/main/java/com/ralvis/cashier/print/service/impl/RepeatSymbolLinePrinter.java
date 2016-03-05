@@ -25,7 +25,7 @@ public class RepeatSymbolLinePrinter implements LinePrinter{
 	}
 	
 	@Override
-	public String generateLine() {
+	public String print() {
 		return MultiChars.initToString(length, character);
 	}
 }
