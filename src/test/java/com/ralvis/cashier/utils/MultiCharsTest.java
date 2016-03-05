@@ -2,7 +2,7 @@
  * @author elvis.zhang
  * Description: 
  * 测试字符串拼接
- * 2016年3月5日下午1:14:54
+ * 2016年3月5日下午1:35:54
  */
 package com.ralvis.cashier.utils;
 

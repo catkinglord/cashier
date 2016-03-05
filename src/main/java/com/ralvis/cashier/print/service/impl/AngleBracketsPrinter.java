@@ -7,11 +7,9 @@
 package com.ralvis.cashier.print.service.impl;
 
 import org.apache.commons.lang.StringUtils;
-
 import com.ralvis.cashier.print.service.Printer;
 
 public class AngleBracketsPrinter implements Printer{
-
 	private String name;
 	
 	public AngleBracketsPrinter(String name) {

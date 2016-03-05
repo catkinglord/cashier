@@ -2,7 +2,7 @@
  * @author elvis.zhang
  * Description: 
  * 测试小票打印-打印尖括号名称
- * 2016年3月5日下午1:14:54
+ * 2016年3月5日下午3:36:03
  */
 package com.ralvis.cashier.print;
 

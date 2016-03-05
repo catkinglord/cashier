@@ -2,7 +2,7 @@
  * @author elvis.zhang
  * Description: 
  * 测试小票打印-打印名称-例如名称: 苹果
- * 2016年3月5日下午1:14:54
+ * 2016年3月5日下午4:00:54
  */
 package com.ralvis.cashier.print;
 

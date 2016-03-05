@@ -7,12 +7,11 @@
 package com.ralvis.cashier.print.service.impl;
 
 import org.apache.commons.lang.StringUtils;
-
 import com.ralvis.cashier.print.service.Printer;
 
 public class KeyValuePrinter implements Printer{
-
-	private final static String DEFAULT_VALUE = "未知";
+	private final static String UNKONW_VALUE = "未知";
+	
 	private String key;
 	private String value;
 	
@@ -23,7 +22,7 @@ public class KeyValuePrinter implements Printer{
 			throw new RuntimeException("key不能为空");
 		}
 		if (StringUtils.isEmpty(value)) {
-			this.value = DEFAULT_VALUE;
+			this.value = UNKONW_VALUE;
 		}
 	}
 	
