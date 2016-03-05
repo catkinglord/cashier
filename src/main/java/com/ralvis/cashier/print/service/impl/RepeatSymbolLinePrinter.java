@@ -1,6 +1,7 @@
 /**
  * @author elvis.zhang
- * Description: 
+ * Description:
+ * 打印一行重复字符 
  * 2016年3月5日下午2:42:48
  */
 package com.ralvis.cashier.print.service.impl;
