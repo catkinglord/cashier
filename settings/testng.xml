@@ -12,5 +12,11 @@
     </packages>
   </test>
   
+  <test name="testUtil">
+    <packages>
+    	<package name="com.ralvis.cashier.utils"></package>
+    </packages>
+  </test>
+  
   
 </suite>
