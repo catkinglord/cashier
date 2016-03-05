@@ -1,7 +1,7 @@
 /**
  * @author elvis.zhang
  * Description: 
- * 打印小票-尖括号输出名称
+ * 打印小票-尖括号输出名称-例如<name>
  * 2016年3月5日下午3:38:03
  */
 package com.ralvis.cashier.print.service.impl;

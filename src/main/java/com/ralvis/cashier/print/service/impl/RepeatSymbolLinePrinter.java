@@ -1,7 +1,7 @@
 /**
  * @author elvis.zhang
  * Description:
- * 打印一行重复字符 
+ * 打印小票-打印一行重复字符-例如*******
  * 2016年3月5日下午2:42:48
  */
 package com.ralvis.cashier.print.service.impl;
