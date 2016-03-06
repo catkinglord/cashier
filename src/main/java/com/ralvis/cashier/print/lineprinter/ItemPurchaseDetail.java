@@ -10,29 +10,23 @@ import java.math.BigDecimal;
 
 public interface ItemPurchaseDetail {
 
-	String getNameKey();
 	//商品名称
+	String getNameKey();
 	String getNameValue();
 	
-	String getAmountKey();
 	//数量
+	String getAmountKey();
 	int getAmount();
 	String getAmountUom();
 	
-	String getUnitPriceKey();
 	//单价
+	String getUnitPriceKey();
 	BigDecimal getUnitPriceMoney();
 	String getMoneyUom();
 	
-	String getTotalKey();
 	//小计
+	String getTotalKey();
 	BigDecimal getTotalMoeny();
-	
-	
-	String getSavedKey();
-	//节省的钱
-	BigDecimal getSavedMoney();
-	
 	//金额的小数点位数
 	int getMoneyDecimal();
 }

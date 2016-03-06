@@ -2,8 +2,8 @@
  * @author elvis.zhang
  * Description: 
  * 测试小票打印-打印一行购买商品明细
- * 名称：可口可乐，数量：3瓶，单价：3.00(元)，小计：9.00(元)
- * 2016年3月5日下午6:20:54
+ * 名称：可口可乐，数量：3瓶，单价：3.00(元)，小计：9.00(元)，节省2.00(元)
+ * 2016年3月6日上午9:30:54
  */
 package com.ralvis.cashier.print.lineprinter;
 
@@ -14,22 +14,22 @@ import org.testng.annotations.Test;
 import com.ralvis.cashier.base.BaseTestNG;
 import com.ralvis.cashier.print.lineprinter.LinePrinter;
 
-public class ItemDetailLinePrinterTest extends BaseTestNG{
+public class ItemDetailWithSavedMoneyLinePrinterTest extends BaseTestNG{
 	@Test(expectedExceptions={RuntimeException.class})
 	public void testPrintDetailNull() {
-		LinePrinter printer = new ItemDetailLinePrinter(null);
+		LinePrinter printer = new ItemDetailWithSavedMoneyLinePrinter(null);
 		Assert.assertNull(printer);
 	}
 	
 	@Test
 	public void testCustomPrint() {
-		ItemPurchaseDetail detail = new MockItemPurchaseDetail();
-		LinePrinter printer = new ItemDetailLinePrinter(detail);
+		ItemPurchaseDetailWithSavedMoney detail = new MockItemPurchaseDetail();
+		LinePrinter printer = new ItemDetailWithSavedMoneyLinePrinter(detail);
 		String line = printer.print();
-		Assert.assertEquals(line, "名称：可口可乐，数量：3瓶，单价：3.00(元)，小计：9.00(元)");
+		Assert.assertEquals(line, "名称：可口可乐，数量：3瓶，单价：3.00(元)，小计：9.00(元)，节省2.00(元)");
 	}
 	
-	private static class MockItemPurchaseDetail implements ItemPurchaseDetail {
+	private static class MockItemPurchaseDetail implements ItemPurchaseDetailWithSavedMoney {
 		@Override
 		public String getNameKey() {
 			return "名称";
@@ -69,6 +69,14 @@ public class ItemDetailLinePrinterTest extends BaseTestNG{
 		@Override
 		public BigDecimal getTotalMoeny() {
 			return new BigDecimal("9");
+		}
+		@Override
+		public String getSavedKey() {
+			return "节省";
+		}
+		@Override
+		public BigDecimal getSavedMoney() {
+			return new BigDecimal("2");
 		}
 		@Override
 		public int getMoneyDecimal() {

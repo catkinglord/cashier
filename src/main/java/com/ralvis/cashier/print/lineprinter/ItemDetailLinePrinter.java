@@ -17,7 +17,7 @@ import com.ralvis.cashier.print.printer.Printer;
 import com.ralvis.cashier.print.printer.TrimedKeyMoneyWithUomPrinter;
 
 public class ItemDetailLinePrinter implements LinePrinter{
-	private List<Printer> printers = new ArrayList<>();
+	protected List<Printer> printers = new ArrayList<>();
 	private ItemPurchaseDetail detail;
 	
 	public ItemDetailLinePrinter(ItemPurchaseDetail detail) {
@@ -27,12 +27,11 @@ public class ItemDetailLinePrinter implements LinePrinter{
 		}
 		buildPrinters();
 	}
-	void buildPrinters() {
+	private void buildPrinters() {
 		buildItemDetailName();
 		buildItemDetailAmount();
 		buildItemDetailUnitPrice();
 		buildItemDetailTotal();
-		buildItemDetailSavedMoney();
 	}
 	private void buildItemDetailName() {
 		Printer printer = new KeyValuePrinter(detail.getNameKey(), 
@@ -55,13 +54,6 @@ public class ItemDetailLinePrinter implements LinePrinter{
 	private void buildItemDetailTotal() {
 		Printer printer = new KeyMoneyWithUomPrinter(detail.getTotalKey(), 
 				detail.getTotalMoeny(),
-				detail.getMoneyDecimal(),
-				detail.getMoneyUom());
-		printers.add(printer);
-	}
-	private void buildItemDetailSavedMoney() {
-		Printer printer = new TrimedKeyMoneyWithUomPrinter(detail.getSavedKey(), 
-				detail.getSavedMoney(),
 				detail.getMoneyDecimal(),
 				detail.getMoneyUom());
 		printers.add(printer);
