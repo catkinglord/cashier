@@ -14,7 +14,6 @@ import com.ralvis.cashier.print.printer.KeyAmountWithUomPrinter;
 import com.ralvis.cashier.print.printer.KeyMoneyWithUomPrinter;
 import com.ralvis.cashier.print.printer.KeyValuePrinter;
 import com.ralvis.cashier.print.printer.Printer;
-import com.ralvis.cashier.print.printer.TrimedKeyMoneyWithUomPrinter;
 
 public class ItemDetailLinePrinter implements LinePrinter{
 	protected List<Printer> printers = new ArrayList<>();
