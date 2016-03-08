@@ -1,13 +1,12 @@
  /**
  * @author elvis.zhang
  * Description: 
- * 测试商品按照原价计算，不享受折扣
+ * 测试商品按照原价计算，不享受折扣，例如95折
  * 2016年3月8日下午4:13:09
  */
 package com.ralvis.cashier.discount;
 
 import java.math.BigDecimal;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.ralvis.cashier.base.BaseTestNG;
@@ -31,14 +30,14 @@ public class OriginalCostDiscountTest extends BaseTestNG{
 	@Test(expectedExceptions={RuntimeException.class})
 	public void testComputeUnitPriceNull() {
 		Discount discount = new OriginalCostDiscount();
-		BigDecimal result = discount.compute(0, null);
+		BigDecimal result = discount.compute(1, null);
 		Assert.assertNotNull(result);
 	}
 	
 	@Test(expectedExceptions={RuntimeException.class})
 	public void testComputeUnitPriceZero() {
 		Discount discount = new OriginalCostDiscount();
-		BigDecimal result = discount.compute(0, BigDecimal.ZERO);
+		BigDecimal result = discount.compute(1, BigDecimal.ZERO);
 		Assert.assertNotNull(result);
 	}
 	

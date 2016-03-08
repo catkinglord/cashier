@@ -17,4 +17,6 @@ public interface Discount {
 	 * @return			总价
 	 */
 	BigDecimal compute(int amount, BigDecimal unitPrice);
+	
+	void checkComputeCondition(int amount, BigDecimal unitPrice);
 }
