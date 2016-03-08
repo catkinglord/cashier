@@ -7,23 +7,14 @@
 package com.ralvis.cashier.discount;
 
 import java.math.BigDecimal;
+import com.ralvis.cashier.utils.Settings;
 
-public class OriginalCostDiscount implements Discount{
+public class OriginalCostDiscount implements Discount {
 
-	@Override
-	public void checkComputeCondition(int amount, BigDecimal unitPrice) {
-		if (amount <= 0) {
-			throw new RuntimeException("数量不能为负数 ");
-		}
-		if( unitPrice == null || unitPrice.compareTo(BigDecimal.ZERO) <= 0) {
-			throw new RuntimeException("单价只能为正数");
-		}
-	}
-	
 	@Override
 	public BigDecimal compute(int amount, BigDecimal unitPrice) {
-		checkComputeCondition(amount, unitPrice);
-		
+		Settings.checkBuyAmountCondition(amount);
+		Settings.checkBuyUnitPriceCondition(unitPrice);
 		return unitPrice.multiply(BigDecimal.valueOf(amount));
 	}
 }

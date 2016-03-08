@@ -15,7 +15,7 @@ public class NormalDiscount extends OriginalCostDiscount {
 	
 	private int discount;
 	
-	public NormalDiscount(int discount) {
+	public NormalDiscount(int discount, Discount nextDiscount) {
 		this.discount = discount;
 		if (discount < MIN_DISCOUNT) {
 			throw new RuntimeException(String.format("折扣不能小于%d", MIN_DISCOUNT));
