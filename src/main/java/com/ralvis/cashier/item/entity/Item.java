@@ -6,6 +6,8 @@
  */
 package com.ralvis.cashier.item.entity;
 
+import java.math.BigDecimal;
+
 public class Item {
 	//物品条码
 	private String itemCode;
@@ -15,6 +17,8 @@ public class Item {
 	private String amountUom;
 	//金额单位
 	private String moneyUom;
+	//单价金额
+	private BigDecimal unitPrice;
 	
 	/**
 	 * @param itemCode 
@@ -23,11 +27,12 @@ public class Item {
 	 * @param moneyUom
 	 */
 	public Item(String itemCode, String itemName, String amountUom,
-			String moneyUom) {
+			String moneyUom, BigDecimal unitPrice) {
 		this.itemCode = itemCode;
 		this.itemName = itemName;
 		this.amountUom = amountUom;
 		this.moneyUom = moneyUom;
+		this.unitPrice = unitPrice;
 	}
 	
 	public String getItemCode() {
@@ -56,5 +61,12 @@ public class Item {
 	}
 	public void setMoneyUom(String moneyUom) {
 		this.moneyUom = moneyUom;
+	}
+	
+	public BigDecimal getUnitPrice() {
+		return unitPrice;
+	}
+	public void setUnitPrice(BigDecimal unitPrice) {
+		this.unitPrice = unitPrice;
 	}
 }
