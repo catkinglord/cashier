@@ -25,9 +25,17 @@ public class NormalDiscount extends OriginalCostDiscount {
 		}
 	}
 	
+	/**
+	 * 技术折扣商品省的钱
+	 */
+	public BigDecimal computeSavedMoney(int amount, BigDecimal unitPrice) {
+		return super.compute(amount, unitPrice)
+				.multiply(BIGDECIMAL_100.subtract(BigDecimal.valueOf(discount)))
+				.divide(BIGDECIMAL_100);
+	}
+	
 	@Override
 	public BigDecimal compute(int amount, BigDecimal unitPrice) {
-		
 		return super.compute(amount, unitPrice)
 				.multiply(BigDecimal.valueOf(discount))
 				.divide(BIGDECIMAL_100);

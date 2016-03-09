@@ -28,15 +28,19 @@ public class BuyMForNFreeDiscount extends OriginalCostDiscount {
 		}
 	}
 	
+	/**
+	 * 免费赠送的商品个数
+	 */
+	public int costFreeNumber(int amount) {
+		return amount / (mBuy + nFree) * (mBuy - nFree);
+	}
+	
 	@Override
 	public BigDecimal compute(int amount, BigDecimal unitPrice) {
 		int actualPaidAmount = getActualPaidAmount(amount);
 		return super.compute(actualPaidAmount, unitPrice);
 	}
 	int getActualPaidAmount(int amount) {
-		if (amount < mBuy) {
-			return amount;
-		}
-		return amount - (amount / mBuy) * nFree;
+		return amount - costFreeNumber(amount);
 	}
 }

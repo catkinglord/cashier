@@ -67,7 +67,7 @@ public class ItemDetailWithSavedMoneyLinePrinterTest extends BaseTestNG{
 			return "小计";
 		}
 		@Override
-		public BigDecimal getTotalMoeny() {
+		public BigDecimal getTotalMoney() {
 			return new BigDecimal("9");
 		}
 		@Override

@@ -10,18 +10,31 @@ import java.math.BigDecimal;
 
 import com.ralvis.cashier.discount.Discount;
 import com.ralvis.cashier.discount.OriginalCostDiscount;
+import com.ralvis.cashier.print.lineprinter.ItemPurchaseDetail;
+import com.ralvis.cashier.utils.Settings;
 
-public class ItemDetail {
+public class ItemDetail implements ItemPurchaseDetail{
 	//商品品种
-	private Item item;
+	protected Item item;
 	//商品数量
-	private int amount;
+	protected int amount;
 	//商品总价
-	private BigDecimal total;
+	protected BigDecimal total;
 	//打折接口
-	private Discount discount;
+	protected Discount discount;
 	
 	public ItemDetail(Item item, int amount, Discount discount) {
+		if (discount == null) {
+			throw new RuntimeException("discount不能为空");
+		}
+		init(item, amount, discount);
+	}
+	
+	public ItemDetail(Item item, int amount) {
+		init(item, amount, new OriginalCostDiscount());
+	}
+	
+	private void init(Item item, int amount, Discount discount) {
 		this.item = item;
 		this.amount = amount;
 		this.discount = discount;
@@ -32,9 +45,62 @@ public class ItemDetail {
 		if (amount <= 0) {
 			throw new RuntimeException("购买的item数量要为正数");
 		}
-		if (discount == null) {
-			discount = new OriginalCostDiscount();
-		}
 		this.total = discount.compute(amount, item.getUnitPrice());
+	}
+	
+
+	@Override
+	public String getNameKey() {
+		return Settings.getNameKey();
+	}
+
+	@Override
+	public String getNameValue() {
+		return item.getItemName();
+	}
+
+	@Override
+	public String getAmountKey() {
+		return Settings.getAmountKey();
+	}
+
+	@Override
+	public int getAmount() {
+		return amount;
+	}
+	
+	@Override
+	public String getAmountUom() {
+		return item.getAmountUom();
+	}
+
+	@Override
+	public String getUnitPriceKey() {
+		return Settings.getUnitPriceKey();
+	}
+
+	@Override
+	public BigDecimal getUnitPriceMoney() {
+		return item.getUnitPrice();
+	}
+
+	@Override
+	public String getMoneyUom() {
+		return item.getMoneyUom();
+	}
+
+	@Override
+	public String getTotalKey() {
+		return Settings.getItemDetailTotalKey();
+	}
+
+	@Override
+	public BigDecimal getTotalMoney() {
+		return total;
+	}
+
+	@Override
+	public int getMoneyDecimal() {
+		return Settings.getMoneyDecimal();
 	}
 }

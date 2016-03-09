@@ -80,7 +80,21 @@ public class BuyMForNFreeDiscountTest extends BaseTestNG{
 	@Test
 	public void testComputeCustom() {
 		Discount discount = new BuyMForNFreeDiscount(2, 1);
-		BigDecimal result = discount.compute(5, new BigDecimal("1.2"));
-		Assert.assertEquals(result, new BigDecimal("3.6"));
+		BigDecimal result = discount.compute(3, new BigDecimal("3.00"));
+		Assert.assertEquals(result, new BigDecimal("6.00"));
+	}
+	
+	@Test
+	public void testComputeCustomForLessM() {
+		Discount discount = new BuyMForNFreeDiscount(2, 1);
+		BigDecimal result = discount.compute(2, new BigDecimal("1.2"));
+		Assert.assertEquals(result, new BigDecimal("2.4"));
+	}
+	
+	@Test
+	public void testCostFreeNumber() {
+		BuyMForNFreeDiscount discount = new BuyMForNFreeDiscount(2, 1);
+		int freeNumber = discount.costFreeNumber(5);
+		Assert.assertEquals(freeNumber, 1);
 	}
 }

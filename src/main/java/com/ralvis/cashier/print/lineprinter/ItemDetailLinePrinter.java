@@ -52,7 +52,7 @@ public class ItemDetailLinePrinter implements LinePrinter{
 	}
 	private void buildItemDetailTotal() {
 		Printer printer = new KeyMoneyWithUomPrinter(detail.getTotalKey(), 
-				detail.getTotalMoeny(),
+				detail.getTotalMoney(),
 				detail.getMoneyDecimal(),
 				detail.getMoneyUom());
 		printers.add(printer);

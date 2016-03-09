@@ -7,8 +7,10 @@
 package com.ralvis.cashier.discount;
 
 import java.math.BigDecimal;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import com.ralvis.cashier.base.BaseTestNG;
 
 public class NormalDiscountTest extends BaseTestNG{
@@ -70,5 +72,12 @@ public class NormalDiscountTest extends BaseTestNG{
 		Discount discount = new NormalDiscount(60);
 		BigDecimal result = discount.compute(5, new BigDecimal("1.2"));
 		Assert.assertEquals(result, new BigDecimal("3.6"));
+	}
+	
+	@Test
+	public void testSavedMoney() {
+		NormalDiscount discount = new NormalDiscount(60);
+		BigDecimal savedMoney = discount.computeSavedMoney(5, new BigDecimal("1.2"));
+		Assert.assertEquals(savedMoney, new BigDecimal("2.4"));
 	}
 }

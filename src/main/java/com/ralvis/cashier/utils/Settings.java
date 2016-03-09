@@ -30,4 +30,41 @@ public class Settings {
 		}
 	}
 	
+	/**
+	 * 打印商品名称的key值
+	 */
+	public static String getNameKey() {
+		return "名称";
+	}
+	/**
+	 * 打印商品数量的key值
+	 */
+	public static String getAmountKey() {
+		return "数量";
+	}
+	/**
+	 * 打印商品单价的key值
+	 */
+	public static String getUnitPriceKey() {
+		return "单价";
+	}
+	/**
+	 * 打印商品小计的key值
+	 */
+	public static String getItemDetailTotalKey() {
+		return "小计";
+	}
+	/**
+	 * 打印商品金额的小数点位数
+	 */
+	public static int getMoneyDecimal() {
+		return 2;
+	}
+	/**
+	 * 打印商品节省的key值
+	 */
+	public static String getItemDetailSavedKey() {
+		return "节省";
+	}
+	
 }

@@ -26,7 +26,7 @@ public interface ItemPurchaseDetail {
 	
 	//小计
 	String getTotalKey();
-	BigDecimal getTotalMoeny();
+	BigDecimal getTotalMoney();
 	//金额的小数点位数
 	int getMoneyDecimal();
 }
