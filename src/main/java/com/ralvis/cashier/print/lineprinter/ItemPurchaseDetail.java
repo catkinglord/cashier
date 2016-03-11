@@ -8,25 +8,19 @@ package com.ralvis.cashier.print.lineprinter;
 
 import java.math.BigDecimal;
 
-public interface ItemPurchaseDetail {
+public interface ItemPurchaseDetail extends ItemDetailKey{
 
 	//商品名称
-	String getNameKey();
 	String getNameValue();
 	
 	//数量
-	String getAmountKey();
 	int getAmount();
 	String getAmountUom();
 	
 	//单价
-	String getUnitPriceKey();
 	BigDecimal getUnitPriceMoney();
 	String getMoneyUom();
 	
 	//小计
-	String getTotalKey();
 	BigDecimal getTotalMoney();
-	//金额的小数点位数
-	int getMoneyDecimal();
 }

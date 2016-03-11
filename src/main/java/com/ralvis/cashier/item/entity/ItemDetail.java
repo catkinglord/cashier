@@ -10,10 +10,10 @@ import java.math.BigDecimal;
 
 import com.ralvis.cashier.discount.Discount;
 import com.ralvis.cashier.discount.OriginalCostDiscount;
+import com.ralvis.cashier.print.lineprinter.ItemDetailKeyFromSettings;
 import com.ralvis.cashier.print.lineprinter.ItemPurchaseDetail;
-import com.ralvis.cashier.utils.Settings;
 
-public class ItemDetail implements ItemPurchaseDetail{
+public class ItemDetail extends ItemDetailKeyFromSettings implements ItemPurchaseDetail {
 	//商品品种
 	protected Item item;
 	//商品数量
@@ -47,21 +47,10 @@ public class ItemDetail implements ItemPurchaseDetail{
 		}
 		this.total = discount.compute(amount, item.getUnitPrice());
 	}
-	
-
-	@Override
-	public String getNameKey() {
-		return Settings.getNameKey();
-	}
 
 	@Override
 	public String getNameValue() {
 		return item.getItemName();
-	}
-
-	@Override
-	public String getAmountKey() {
-		return Settings.getAmountKey();
 	}
 
 	@Override
@@ -75,11 +64,6 @@ public class ItemDetail implements ItemPurchaseDetail{
 	}
 
 	@Override
-	public String getUnitPriceKey() {
-		return Settings.getUnitPriceKey();
-	}
-
-	@Override
 	public BigDecimal getUnitPriceMoney() {
 		return item.getUnitPrice();
 	}
@@ -90,17 +74,7 @@ public class ItemDetail implements ItemPurchaseDetail{
 	}
 
 	@Override
-	public String getTotalKey() {
-		return Settings.getItemDetailTotalKey();
-	}
-
-	@Override
 	public BigDecimal getTotalMoney() {
 		return total;
-	}
-
-	@Override
-	public int getMoneyDecimal() {
-		return Settings.getMoneyDecimal();
 	}
 }
