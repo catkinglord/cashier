@@ -32,7 +32,7 @@ public class NormalDiscountItemDetail extends ItemDetail implements ItemPurchase
 
 	@Override
 	public String getSavedKey() {
-		return Settings.getItemDetailSavedKey();
+		return Settings.getItemSavedKey();
 	}
 
 	@Override

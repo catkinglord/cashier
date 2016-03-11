@@ -69,7 +69,7 @@ public class Settings {
 	/**
 	 * 打印商品节省的key值
 	 */
-	public static String getItemDetailSavedKey() {
+	public static String getItemSavedKey() {
 		return "节省";
 	}
 	/**
