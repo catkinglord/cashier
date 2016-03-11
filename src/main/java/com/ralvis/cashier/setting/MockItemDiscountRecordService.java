@@ -1,7 +1,7 @@
  /**
  * @author elvis.zhang
  * Description: 
- * 
+ * 商品和折扣关联类服务实现
  * 2016年3月11日下午5:26:42
  */
 package com.ralvis.cashier.setting;
