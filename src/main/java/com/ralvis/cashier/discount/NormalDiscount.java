@@ -8,6 +8,10 @@ package com.ralvis.cashier.discount;
 
 import java.math.BigDecimal;
 
+import com.ralvis.cashier.item.entity.Item;
+import com.ralvis.cashier.item.entity.ItemDetail;
+import com.ralvis.cashier.item.entity.NormalDiscountItemDetail;
+
 public class NormalDiscount extends OriginalCostDiscount implements SavedMoney{
 	private static final int MIN_DISCOUNT = 1;
 	private static final int MAX_DISCOUNT = 100;
@@ -39,5 +43,10 @@ public class NormalDiscount extends OriginalCostDiscount implements SavedMoney{
 		return super.compute(amount, unitPrice)
 				.multiply(BigDecimal.valueOf(discount))
 				.divide(BIGDECIMAL_100);
+	}
+	
+	@Override
+	public ItemDetail generateItemDetail(Item item, int amount) {
+		return new NormalDiscountItemDetail(item, amount, this);
 	}
 }

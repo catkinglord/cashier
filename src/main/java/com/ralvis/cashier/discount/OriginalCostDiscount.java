@@ -8,6 +8,9 @@ package com.ralvis.cashier.discount;
 
 import java.math.BigDecimal;
 
+import com.ralvis.cashier.item.entity.Item;
+import com.ralvis.cashier.item.entity.ItemDetail;
+import com.ralvis.cashier.item.entity.NormalItemDetail;
 import com.ralvis.cashier.setting.Settings;
 
 public class OriginalCostDiscount implements Discount {
@@ -17,5 +20,10 @@ public class OriginalCostDiscount implements Discount {
 		Settings.checkBuyAmountCondition(amount);
 		Settings.checkBuyUnitPriceCondition(unitPrice);
 		return unitPrice.multiply(BigDecimal.valueOf(amount));
+	}
+	
+	@Override
+	public ItemDetail generateItemDetail(Item item, int amount) {
+		return new NormalItemDetail(item, amount);
 	}
 }

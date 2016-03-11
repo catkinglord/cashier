@@ -8,6 +8,9 @@ package com.ralvis.cashier.discount;
 
 import java.math.BigDecimal;
 
+import com.ralvis.cashier.item.entity.Item;
+import com.ralvis.cashier.item.entity.ItemDetail;
+
 public interface Discount {
 
 	/**
@@ -17,4 +20,6 @@ public interface Discount {
 	 * @return			总价
 	 */
 	BigDecimal compute(int amount, BigDecimal unitPrice);
+	
+	ItemDetail generateItemDetail(Item item, int amount);
 }

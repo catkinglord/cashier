@@ -8,6 +8,11 @@ package com.ralvis.cashier.discount;
 
 import java.math.BigDecimal;
 
+import com.ralvis.cashier.item.entity.BuyMForNFreeItemDetail;
+import com.ralvis.cashier.item.entity.Item;
+import com.ralvis.cashier.item.entity.ItemDetail;
+import com.ralvis.cashier.item.entity.NormalDiscountItemDetail;
+
 public class BuyMForNFreeDiscount extends OriginalCostDiscount implements SavedMoney{
 	//购买数
 	private int mBuy;
@@ -49,5 +54,10 @@ public class BuyMForNFreeDiscount extends OriginalCostDiscount implements SavedM
 		int freeNumber = costFreeNumber(amount);
 		//freeNumber可能为0, 比如买2赠1，只买了2个
 		return unitPrice.multiply(BigDecimal.valueOf(freeNumber));
+	}
+	
+	@Override
+	public ItemDetail generateItemDetail(Item item, int amount) {
+		return new BuyMForNFreeItemDetail(item, amount, this);
 	}
 }
