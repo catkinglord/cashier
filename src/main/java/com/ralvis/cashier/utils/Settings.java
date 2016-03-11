@@ -29,6 +29,19 @@ public class Settings {
 			throw new RuntimeException("单价只能为正数");
 		}
 	}
+	/**
+	 * 打印清单分隔符-格式
+	 */
+	public static int getDashNumber() {
+		return 22;
+	}
+	
+	/**
+	 * 打印清单对应的商店名称
+	 */
+	public static String getStoreName() {
+		return "没钱赚商店";
+	}
 	
 	/**
 	 * 打印商品名称的key值
