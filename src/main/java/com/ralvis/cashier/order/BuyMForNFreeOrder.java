@@ -10,7 +10,7 @@ import com.ralvis.cashier.item.entity.ItemDetail;
 import com.ralvis.cashier.print.lineprinter.BuyMForNFreeAmountLinePrinter;
 import com.ralvis.cashier.print.lineprinter.ItemFreeAmountDetail;
 import com.ralvis.cashier.print.printer.TextPrinter;
-import com.ralvis.cashier.utils.Settings;
+import com.ralvis.cashier.setting.Settings;
 
 public class BuyMForNFreeOrder extends SavedMoneyOrder {
 	@Override

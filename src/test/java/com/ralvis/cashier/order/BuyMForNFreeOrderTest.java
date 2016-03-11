@@ -21,7 +21,7 @@ import com.ralvis.cashier.item.entity.NormalDiscountItemDetail;
 import com.ralvis.cashier.item.entity.NormalItemDetail;
 import com.ralvis.cashier.item.service.ItemService;
 import com.ralvis.cashier.item.service.MockItemService;
-import com.ralvis.cashier.utils.Settings;
+import com.ralvis.cashier.setting.Settings;
 
 public class BuyMForNFreeOrderTest {
 	@Test

@@ -7,10 +7,11 @@
 package com.ralvis.cashier.order;
 
 import java.math.BigDecimal;
+
 import com.ralvis.cashier.item.entity.ItemDetail;
 import com.ralvis.cashier.print.lineprinter.ItemPurchaseDetailWithSavedMoney;
 import com.ralvis.cashier.print.printer.KeyMoneyWithUomPrinter;
-import com.ralvis.cashier.utils.Settings;
+import com.ralvis.cashier.setting.Settings;
 
 public class SavedMoneyOrder extends Order{
 

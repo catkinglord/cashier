@@ -9,12 +9,13 @@ package com.ralvis.cashier.order;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+
 import com.ralvis.cashier.item.entity.ItemDetail;
 import com.ralvis.cashier.print.lineprinter.BannerLinePrinter;
 import com.ralvis.cashier.print.lineprinter.RepeatSymbolLinePrinter;
 import com.ralvis.cashier.print.printer.KeyMoneyWithUomPrinter;
 import com.ralvis.cashier.print.printer.Printer;
-import com.ralvis.cashier.utils.Settings;
+import com.ralvis.cashier.setting.Settings;
 
 public abstract class Order {
 	protected List<ItemDetail> items;

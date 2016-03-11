@@ -7,7 +7,7 @@
 package com.ralvis.cashier.order;
 
 import com.ralvis.cashier.print.printer.KeyMoneyWithUomPrinter;
-import com.ralvis.cashier.utils.Settings;
+import com.ralvis.cashier.setting.Settings;
 
 public class NormalOrder extends Order {
 	@Override

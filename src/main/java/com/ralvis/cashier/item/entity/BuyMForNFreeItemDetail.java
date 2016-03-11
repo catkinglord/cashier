@@ -7,12 +7,13 @@
 package com.ralvis.cashier.item.entity;
 
 import java.math.BigDecimal;
+
 import com.ralvis.cashier.discount.BuyMForNFreeDiscount;
 import com.ralvis.cashier.print.lineprinter.ItemDetailLinePrinter;
 import com.ralvis.cashier.print.lineprinter.ItemFreeAmountDetail;
 import com.ralvis.cashier.print.lineprinter.ItemPurchaseDetailWithSavedMoney;
 import com.ralvis.cashier.print.lineprinter.LinePrinter;
-import com.ralvis.cashier.utils.Settings;
+import com.ralvis.cashier.setting.Settings;
 
 public class BuyMForNFreeItemDetail extends ItemDetail implements ItemFreeAmountDetail, ItemPurchaseDetailWithSavedMoney {
 	private int freeAmount;

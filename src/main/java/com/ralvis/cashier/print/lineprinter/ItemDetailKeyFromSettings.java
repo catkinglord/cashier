@@ -5,7 +5,7 @@
  */
 package com.ralvis.cashier.print.lineprinter;
 
-import com.ralvis.cashier.utils.Settings;
+import com.ralvis.cashier.setting.Settings;
 
 public class ItemDetailKeyFromSettings implements ItemDetailKey{
 

@@ -4,9 +4,12 @@
  * 系统的全局设置
  * 2016年3月8日下午5:27:26
  */
-package com.ralvis.cashier.utils;
+package com.ralvis.cashier.setting;
 
 import java.math.BigDecimal;
+
+import com.ralvis.cashier.discount.Discount;
+import com.ralvis.cashier.utils.Number;
 
 public class Settings {
 
@@ -28,6 +31,26 @@ public class Settings {
 		if( unitPrice == null || unitPrice.compareTo(BigDecimal.ZERO) <= 0) {
 			throw new RuntimeException("单价只能为正数");
 		}
+	}
+	
+	/**
+	 * 默认优惠种类
+	 */
+	public static Discount getTopPriorityDiscount() {
+		return DiscountFacotory.MFORNFREE_DISCOUNT;
+	}
+	/**
+	 * 存储默认的优惠种类
+	 */
+	public static void saveTopPriorityDiscount(Discount discount) {
+		//TODO 
+	}
+	
+	/**
+	 * 默认折扣
+	 */
+	public static int getNormalDiscount() {
+		return 95;
 	}
 	
 	/**

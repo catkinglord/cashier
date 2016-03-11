@@ -7,7 +7,8 @@
 package com.ralvis.cashier.discount;
 
 import java.math.BigDecimal;
-import com.ralvis.cashier.utils.Settings;
+
+import com.ralvis.cashier.setting.Settings;
 
 public class OriginalCostDiscount implements Discount {
 
