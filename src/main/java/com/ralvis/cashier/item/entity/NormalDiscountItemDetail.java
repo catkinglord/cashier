@@ -7,9 +7,10 @@
 package com.ralvis.cashier.item.entity;
 
 import java.math.BigDecimal;
-
 import com.ralvis.cashier.discount.NormalDiscount;
+import com.ralvis.cashier.print.lineprinter.ItemDetailWithSavedMoneyLinePrinter;
 import com.ralvis.cashier.print.lineprinter.ItemPurchaseDetailWithSavedMoney;
+import com.ralvis.cashier.print.lineprinter.LinePrinter;
 import com.ralvis.cashier.utils.Settings;
 
 public class NormalDiscountItemDetail extends ItemDetail implements ItemPurchaseDetailWithSavedMoney{
@@ -28,6 +29,11 @@ public class NormalDiscountItemDetail extends ItemDetail implements ItemPurchase
 		}
 		this.normalDiscount = discount;
 		savedMoney = normalDiscount.computeSavedMoney(amount, item.getUnitPrice());
+	}
+	
+	@Override
+	public LinePrinter generateLinePrinter() {
+		return new ItemDetailWithSavedMoneyLinePrinter(this);
 	}
 
 	@Override

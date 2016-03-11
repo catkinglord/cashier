@@ -8,7 +8,7 @@ package com.ralvis.cashier.discount;
 
 import java.math.BigDecimal;
 
-public class NormalDiscount extends OriginalCostDiscount {
+public class NormalDiscount extends OriginalCostDiscount implements SavedMoney{
 	private static final int MIN_DISCOUNT = 1;
 	private static final int MAX_DISCOUNT = 100;
 	private static final BigDecimal BIGDECIMAL_100 = BigDecimal.valueOf(100);

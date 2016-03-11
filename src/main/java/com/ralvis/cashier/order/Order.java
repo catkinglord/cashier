@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import com.ralvis.cashier.item.entity.ItemDetail;
 import com.ralvis.cashier.print.lineprinter.BannerLinePrinter;
-import com.ralvis.cashier.print.lineprinter.ItemDetailLinePrinter;
 import com.ralvis.cashier.print.lineprinter.RepeatSymbolLinePrinter;
 import com.ralvis.cashier.print.printer.KeyMoneyWithUomPrinter;
 import com.ralvis.cashier.print.printer.Printer;
@@ -53,7 +52,7 @@ public abstract class Order {
 	}
 	protected void buildItemsPrinter() {
 		for(ItemDetail itemDetail : items) {
-			linePrinters.add(new ItemDetailLinePrinter(itemDetail));
+			linePrinters.add(itemDetail.generateLinePrinter());
 		}
 	}
 	protected void buildDashLinePrinter() {

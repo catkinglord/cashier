@@ -8,7 +8,7 @@ package com.ralvis.cashier.discount;
 
 import java.math.BigDecimal;
 
-public class BuyMForNFreeDiscount extends OriginalCostDiscount {
+public class BuyMForNFreeDiscount extends OriginalCostDiscount implements SavedMoney{
 	//购买数
 	private int mBuy;
 	//赠送数
@@ -42,5 +42,11 @@ public class BuyMForNFreeDiscount extends OriginalCostDiscount {
 	}
 	int getActualPaidAmount(int amount) {
 		return amount - costFreeNumber(amount);
+	}
+
+	@Override
+	public BigDecimal computeSavedMoney(int amount, BigDecimal unitPrice) {
+		int freeNumber = costFreeNumber(amount);
+		return super.compute(freeNumber, unitPrice);
 	}
 }

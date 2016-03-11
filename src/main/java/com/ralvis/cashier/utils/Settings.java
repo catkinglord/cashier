@@ -29,6 +29,30 @@ public class Settings {
 			throw new RuntimeException("单价只能为正数");
 		}
 	}
+	
+	/**
+	 * 买m赠N中的M
+	 */
+	public static int getBuyM() {
+		return 2;
+	}
+	
+	/**
+	 * 买m赠N中的N
+	 */
+	public static int getFreeN() {
+		return 1;
+	}
+	
+	/**
+	 * 打印买M赠N提示
+	 */
+	public static String getBuyMForNKey() {
+		return String.format("买%s赠%s商品：", 
+				Number.getCharacter(getBuyM()),
+				Number.getCharacter(getFreeN()));
+	}
+	
 	/**
 	 * 打印清单分隔符-格式
 	 */
@@ -49,42 +73,49 @@ public class Settings {
 	public static String getNameKey() {
 		return "名称";
 	}
+	
 	/**
 	 * 打印商品数量的key值
 	 */
 	public static String getAmountKey() {
 		return "数量";
 	}
+	
 	/**
 	 * 打印商品单价的key值
 	 */
 	public static String getUnitPriceKey() {
 		return "单价";
 	}
+	
 	/**
 	 * 打印商品金额单位
 	 */
 	public static String getMoneyUom() {
 		return "元";
 	}
+	
 	/**
 	 * 打印商品小计的key值
 	 */
 	public static String getItemDetailTotalKey() {
 		return "小计";
 	}
+	
 	/**
 	 * 打印商品金额的小数点位数
 	 */
 	public static int getMoneyDecimal() {
 		return 2;
 	}
+	
 	/**
 	 * 打印商品节省的key值
 	 */
 	public static String getItemSavedKey() {
 		return "节省";
 	}
+	
 	/**
 	 * 打印商品总计的key值
 	 */

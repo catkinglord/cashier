@@ -7,13 +7,13 @@
 package com.ralvis.cashier.item.entity;
 
 import java.math.BigDecimal;
-
 import com.ralvis.cashier.discount.Discount;
 import com.ralvis.cashier.discount.OriginalCostDiscount;
 import com.ralvis.cashier.print.lineprinter.ItemDetailKeyFromSettings;
 import com.ralvis.cashier.print.lineprinter.ItemPurchaseDetail;
 
-public class ItemDetail extends ItemDetailKeyFromSettings implements ItemPurchaseDetail {
+public abstract class ItemDetail extends ItemDetailKeyFromSettings implements 
+					ItemPurchaseDetail, LinePrinterGenerator {
 	//商品品种
 	protected Item item;
 	//商品数量

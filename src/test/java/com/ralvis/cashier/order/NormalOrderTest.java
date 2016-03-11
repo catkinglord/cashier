@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 
 import com.ralvis.cashier.item.entity.Item;
 import com.ralvis.cashier.item.entity.ItemDetail;
+import com.ralvis.cashier.item.entity.NormalItemDetail;
 import com.ralvis.cashier.item.service.ItemService;
 import com.ralvis.cashier.item.service.MockItemService;
 
@@ -31,7 +32,7 @@ public class NormalOrderTest {
 		
 		ItemService itemService = new MockItemService();
 		Item coco = itemService.findByItemCode("ITEM000001");
-		ItemDetail cocoDetail = new ItemDetail(coco, 3);
+		ItemDetail cocoDetail = new NormalItemDetail(coco, 3);
 		order.addItemDetail(cocoDetail);
 		
 		order.buildPurchasingList();
@@ -53,15 +54,15 @@ public class NormalOrderTest {
 		
 		ItemService itemService = new MockItemService();
 		Item coco = itemService.findByItemCode("ITEM000001");
-		ItemDetail cocoDetail = new ItemDetail(coco, 3);
+		ItemDetail cocoDetail = new NormalItemDetail(coco, 3);
 		order.addItemDetail(cocoDetail);
 		
 		Item ball = itemService.findByItemCode("ITEM000002");
-		ItemDetail ballDetail = new ItemDetail(ball, 5);
+		ItemDetail ballDetail = new NormalItemDetail(ball, 5);
 		order.addItemDetail(ballDetail);
 		
 		Item apple = itemService.findByItemCode("ITEM000003");
-		ItemDetail appleDetail = new ItemDetail(apple, 2);
+		ItemDetail appleDetail = new NormalItemDetail(apple, 2);
 		order.addItemDetail(appleDetail);
 		
 		order.buildPurchasingList();
