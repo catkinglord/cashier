@@ -24,7 +24,7 @@ public class KeyAmountWithUomPrinter implements Printer{
 		if (StringUtils.isEmpty(key)) {
 			throw new RuntimeException("key不能为空");
 		}
-		if (amount <= 0) {
+		if (amount < 0) {
 			throw new RuntimeException("数量必须为正数");
 		}
 		if (StringUtils.isEmpty(uom)) {

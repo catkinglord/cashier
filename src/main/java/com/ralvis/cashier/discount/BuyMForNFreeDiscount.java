@@ -47,6 +47,7 @@ public class BuyMForNFreeDiscount extends OriginalCostDiscount implements SavedM
 	@Override
 	public BigDecimal computeSavedMoney(int amount, BigDecimal unitPrice) {
 		int freeNumber = costFreeNumber(amount);
-		return super.compute(freeNumber, unitPrice);
+		//freeNumber可能为0, 比如买2赠1，只买了2个
+		return unitPrice.multiply(BigDecimal.valueOf(freeNumber));
 	}
 }

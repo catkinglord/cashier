@@ -29,7 +29,7 @@ public class KeyMoneyWithUomPrinter implements Printer{
 		if (StringUtils.isEmpty(key)) {
 			throw new RuntimeException("key不能为空");
 		}
-		if (money == null || money.compareTo(BigDecimal.ZERO) <= 0) {
+		if (money == null || money.compareTo(BigDecimal.ZERO) < 0) {
 			throw new RuntimeException("金额必须为正数");
 		}
 		if (decimals < 0) {

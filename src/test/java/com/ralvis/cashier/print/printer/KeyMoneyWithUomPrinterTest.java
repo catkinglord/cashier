@@ -40,10 +40,11 @@ public class KeyMoneyWithUomPrinterTest extends BaseTestNG{
 		Assert.assertNull(printer);
 	}
 	
-	@Test(expectedExceptions={RuntimeException.class})
+	@Test
 	public void testPrintMoneyZero() {
 		Printer printer = new KeyMoneyWithUomPrinter("单价", BigDecimal.ZERO, 2, "");
-		Assert.assertNull(printer);
+		String line = printer.print();
+		Assert.assertEquals(line, "单价：0.00(元)");
 	}
 	
 	@Test(expectedExceptions={RuntimeException.class})

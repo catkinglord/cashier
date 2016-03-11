@@ -20,11 +20,20 @@ import com.ralvis.cashier.item.service.MockItemService;
 
 public class NormalOrderTest {
 
-	@Test(expectedExceptions={RuntimeException.class})
+	@Test
 	public void testPrintEmpty() {
 		Order order = new NormalOrder();
 		
 		order.buildPurchasingList();
+		
+		List<String> lines = order.getPurchasingList();
+		List<String> expectedLines = new ArrayList<>();
+		expectedLines.add("***<没钱赚商店>购物清单***");
+		expectedLines.add("----------------------");
+		expectedLines.add("总计：0.00(元)");
+		expectedLines.add("**********************");
+		
+		Assert.assertEquals(lines, expectedLines);
 	}
 	@Test
 	public void testPrintOneItem() {
