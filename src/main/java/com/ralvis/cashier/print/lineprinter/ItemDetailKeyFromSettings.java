@@ -33,4 +33,9 @@ public class ItemDetailKeyFromSettings implements ItemDetailKey{
 	public int getMoneyDecimal() {
 		return Settings.getMoneyDecimal();
 	}
+	
+	@Override
+	public String getMoneyUom() {
+		return Settings.getMoneyUom();
+	}
 }

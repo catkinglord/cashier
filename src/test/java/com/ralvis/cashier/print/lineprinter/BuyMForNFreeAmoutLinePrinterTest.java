@@ -6,13 +6,8 @@
  */
 package com.ralvis.cashier.print.lineprinter;
 
-import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import com.ralvis.cashier.discount.BuyMForNFreeDiscount;
 import com.ralvis.cashier.item.entity.BuyMForNFreeItemDetail;
 import com.ralvis.cashier.item.entity.Item;
@@ -20,7 +15,6 @@ import com.ralvis.cashier.item.service.ItemService;
 import com.ralvis.cashier.item.service.MockItemService;
 
 public class BuyMForNFreeAmoutLinePrinterTest {
-
 	@Test
 	public void testPrint() {
 		ItemService itemService = new MockItemService();

@@ -15,9 +15,9 @@ import com.ralvis.cashier.item.entity.Item;
 public class MockItemService implements ItemService{
 	private static Map<String, Item> map = new HashMap<>();
 	static {
-		map.put("ITEM000001", new Item("ITEM000001", "可口可乐", "瓶", "元", new BigDecimal("3.00")));
-		map.put("ITEM000002", new Item("ITEM000002", "羽毛球", "个", "元", new BigDecimal("1.00")));
-		map.put("ITEM000003", new Item("ITEM000003", "苹果", "斤", "元", new BigDecimal("5.50")));
+		map.put("ITEM000001", new Item("ITEM000001", "可口可乐", "瓶", new BigDecimal("3.00")));
+		map.put("ITEM000002", new Item("ITEM000002", "羽毛球", "个", new BigDecimal("1.00")));
+		map.put("ITEM000003", new Item("ITEM000003", "苹果", "斤", new BigDecimal("5.50")));
 	}
 	
 	public static void initMap( Map<String, Item> aMap) {

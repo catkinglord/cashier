@@ -25,14 +25,14 @@ public class ItemDetailTest extends BaseTestNG {
 
 	@Test(expectedExceptions={RuntimeException.class})
 	public void testDiscountNull() {
-		Item item = new Item("ITEM000001", "可口可乐", "瓶", "元", new BigDecimal("3.00"));
+		Item item = new Item("ITEM000001", "可口可乐", "瓶", new BigDecimal("3.00"));
 		ItemDetail detail = new ItemDetail(item, 1, null);
 		Assert.assertNull(detail);
 	}
 	
 	@Test
 	public void testDiscountOriginal() {
-		Item item = new Item("ITEM000001", "可口可乐", "瓶", "元", new BigDecimal("3.00"));
+		Item item = new Item("ITEM000001", "可口可乐", "瓶", new BigDecimal("3.00"));
 		ItemDetail detail = new ItemDetail(item, 3);
 		LinePrinter printer = new ItemDetailLinePrinter(detail);
 		String line = printer.print();
@@ -41,7 +41,7 @@ public class ItemDetailTest extends BaseTestNG {
 	
 	@Test
 	public void testDiscountNormal() {
-		Item item = new Item("ITEM000001", "可口可乐", "瓶", "元", new BigDecimal("3.00"));
+		Item item = new Item("ITEM000001", "可口可乐", "瓶", new BigDecimal("3.00"));
 		NormalDiscountItemDetail detail = new NormalDiscountItemDetail(item, 3, new NormalDiscount(95));
 		LinePrinter printer = new ItemDetailWithSavedMoneyLinePrinter(detail);
 		String line = printer.print();
@@ -50,7 +50,7 @@ public class ItemDetailTest extends BaseTestNG {
 	
 	@Test
 	public void testDiscountMForN() {
-		Item item = new Item("ITEM000001", "可口可乐", "瓶", "元", new BigDecimal("3.00"));
+		Item item = new Item("ITEM000001", "可口可乐", "瓶", new BigDecimal("3.00"));
 		ItemDetail detail = new ItemDetail(item, 3, new BuyMForNFreeDiscount(2, 1));
 		LinePrinter printer = new ItemDetailLinePrinter(detail);
 		String line = printer.print();

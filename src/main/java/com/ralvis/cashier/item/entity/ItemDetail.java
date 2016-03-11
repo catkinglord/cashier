@@ -69,11 +69,6 @@ public class ItemDetail extends ItemDetailKeyFromSettings implements ItemPurchas
 	}
 
 	@Override
-	public String getMoneyUom() {
-		return item.getMoneyUom();
-	}
-
-	@Override
 	public BigDecimal getTotalMoney() {
 		return total;
 	}

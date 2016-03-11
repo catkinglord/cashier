@@ -49,6 +49,12 @@ public class Settings {
 		return "单价";
 	}
 	/**
+	 * 打印商品金额单位
+	 */
+	public static String getMoneyUom() {
+		return "元";
+	}
+	/**
 	 * 打印商品小计的key值
 	 */
 	public static String getItemDetailTotalKey() {
@@ -65,6 +71,12 @@ public class Settings {
 	 */
 	public static String getItemDetailSavedKey() {
 		return "节省";
+	}
+	/**
+	 * 打印商品总计的key值
+	 */
+	public static String getItemsTotalKey() {
+		return "总计";
 	}
 	
 }

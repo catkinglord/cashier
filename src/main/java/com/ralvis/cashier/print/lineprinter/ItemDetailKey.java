@@ -7,7 +7,6 @@
 package com.ralvis.cashier.print.lineprinter;
 
 public interface ItemDetailKey {
-
 	//商品名称key
 	String getNameKey();
 	//商品数量key
@@ -16,6 +15,8 @@ public interface ItemDetailKey {
 	String getUnitPriceKey();
 	//商品总价key
 	String getTotalKey();
+	//金额单位
+	String getMoneyUom();
 	//金额的小数点位数
 	int getMoneyDecimal();
 }
