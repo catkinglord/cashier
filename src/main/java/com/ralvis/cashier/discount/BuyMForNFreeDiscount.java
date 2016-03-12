@@ -44,7 +44,7 @@ public class BuyMForNFreeDiscount extends OriginalCostDiscount implements SavedM
 	 * 免费赠送的商品个数
 	 */
 	public int costFreeNumber(int amount) {
-		return amount / (mBuy + nFree) * (mBuy - nFree);
+		return amount / (mBuy + nFree) * nFree;
 	}
 	
 	@Override
