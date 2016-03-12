@@ -24,6 +24,14 @@ public abstract class Order {
 	protected List<String> purchasingList;
 	
 	public Order() {
+		init();
+	}
+	
+	public Order(List<ItemDetail> details) {
+		init();
+		addItemDetails(details);
+	}
+	private void init() {
 		items = new ArrayList<>();
 		totalMoney = BigDecimal.ZERO;
 		linePrinters = new ArrayList<>();
@@ -33,6 +41,12 @@ public abstract class Order {
 	public void addItemDetail(ItemDetail detail) {
 		items.add(detail);
 		totalMoney = totalMoney.add(detail.getTotalMoney());
+	}
+	
+	public void addItemDetails(List<ItemDetail> details) {
+		for(ItemDetail itemDetail : details) {
+			addItemDetail(itemDetail);
+		}
 	}
 	
 	public BigDecimal getTotalMoney() {

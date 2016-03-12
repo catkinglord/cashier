@@ -7,9 +7,11 @@
 package com.ralvis.cashier.discount;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import com.ralvis.cashier.item.entity.Item;
 import com.ralvis.cashier.item.entity.ItemDetail;
+import com.ralvis.cashier.order.Order;
 
 public interface Discount {
 
@@ -21,5 +23,12 @@ public interface Discount {
 	 */
 	BigDecimal compute(int amount, BigDecimal unitPrice);
 	
+	//折扣的优先级，值越大越高
+	int getPriority();
+	
+	//不同折扣返回不同订单明细
 	ItemDetail generateItemDetail(Item item, int amount);
+	
+	//不同折扣返回不同订单
+	Order generateOrder(List<ItemDetail> itemDetails);
 }

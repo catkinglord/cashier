@@ -8,10 +8,8 @@ package com.ralvis.cashier.order;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import com.ralvis.cashier.discount.BuyMForNFreeDiscount;
 import com.ralvis.cashier.discount.NormalDiscount;
 import com.ralvis.cashier.item.entity.BuyMForNFreeItemDetail;
@@ -32,7 +30,7 @@ public class BuyMForNFreeOrderTest {
 				Settings.getFreeN());
 		NormalDiscount normalDiscount95 = new NormalDiscount(95);
 		
-		ItemService itemService = new MockItemService();
+		ItemService itemService = MockItemService.getInstance();
 		Item coco = itemService.findByItemCode("ITEM000001");
 		ItemDetail cocoDetail = new BuyMForNFreeItemDetail(coco, 3, discount2For1);
 		
@@ -73,7 +71,7 @@ public class BuyMForNFreeOrderTest {
 		BuyMForNFreeDiscount discount2For1 = new BuyMForNFreeDiscount(Settings.getBuyM(), 
 				Settings.getFreeN());
 		
-		ItemService itemService = new MockItemService();
+		ItemService itemService = MockItemService.getInstance();
 		Item coco = itemService.findByItemCode("ITEM000001");
 		ItemDetail cocoDetail = new BuyMForNFreeItemDetail(coco, 3, discount2For1);
 		
@@ -114,7 +112,7 @@ public class BuyMForNFreeOrderTest {
 		BuyMForNFreeDiscount discount2For1 = new BuyMForNFreeDiscount(Settings.getBuyM(), 
 				Settings.getFreeN());
 		
-		ItemService itemService = new MockItemService();
+		ItemService itemService = MockItemService.getInstance();
 		Item coco = itemService.findByItemCode("ITEM000001");
 		ItemDetail cocoDetail = new BuyMForNFreeItemDetail(coco, 2, discount2For1);
 		

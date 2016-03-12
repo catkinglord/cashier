@@ -7,11 +7,13 @@
 package com.ralvis.cashier.discount;
 
 import java.math.BigDecimal;
-
+import java.util.List;
 import com.ralvis.cashier.item.entity.BuyMForNFreeItemDetail;
 import com.ralvis.cashier.item.entity.Item;
 import com.ralvis.cashier.item.entity.ItemDetail;
-import com.ralvis.cashier.item.entity.NormalDiscountItemDetail;
+import com.ralvis.cashier.order.BuyMForNFreeOrder;
+import com.ralvis.cashier.order.Order;
+import com.ralvis.cashier.setting.Settings;
 
 public class BuyMForNFreeDiscount extends OriginalCostDiscount implements SavedMoney{
 	//购买数
@@ -31,6 +33,11 @@ public class BuyMForNFreeDiscount extends OriginalCostDiscount implements SavedM
 		if (mBuy <= nFree) {
 			throw new RuntimeException("购买数必须大于赠送数");
 		}
+	}
+	
+	@Override
+	public int getPriority() {
+		return Settings.getBuyMForNDiscountPriority();
 	}
 	
 	/**
@@ -59,5 +66,10 @@ public class BuyMForNFreeDiscount extends OriginalCostDiscount implements SavedM
 	@Override
 	public ItemDetail generateItemDetail(Item item, int amount) {
 		return new BuyMForNFreeItemDetail(item, amount, this);
+	}
+	
+	@Override
+	public Order generateOrder(List<ItemDetail> itemDetails) {
+		return new BuyMForNFreeOrder(itemDetails);
 	}
 }

@@ -14,10 +14,10 @@ import com.alibaba.fastjson.JSONArray;
 import com.ralvis.cashier.discount.Discount;
 import com.ralvis.cashier.item.entity.Item;
 import com.ralvis.cashier.item.entity.ItemDetail;
-import com.ralvis.cashier.item.entity.NormalDiscountItemDetail;
 import com.ralvis.cashier.item.service.ItemService;
 import com.ralvis.cashier.item.service.MockItemService;
 import com.ralvis.cashier.order.Order;
+import com.ralvis.cashier.setting.DiscountFacotory;
 import com.ralvis.cashier.setting.ItemDiscountRecordService;
 import com.ralvis.cashier.setting.MockItemDiscountRecordService;
 
@@ -27,14 +27,17 @@ public class InputParser implements Input {
 	private ItemDiscountRecordService itemDiscountRecordService;
 	
 	public InputParser() {
-		itemService = new MockItemService();
-		itemDiscountRecordService = new MockItemDiscountRecordService();
+		itemService = MockItemService.getInstance();
+		itemDiscountRecordService = MockItemDiscountRecordService.getInstance();
 	}
 	
 	@Override
 	public Order getOrder(String orderJson) {
 		List<String> itemList = JSONArray.parseArray(orderJson, String.class);
-		return null;
+		List<ItemDetail> itemDetails = buildItemDetails(itemList);
+		Discount discount = DiscountFacotory.getOrderDiscount(itemDetails);
+		Order order = discount.generateOrder(itemDetails);
+		return order;
 	}
 	
 	List<ItemDetail> buildItemDetails(List<String> itemList) {
@@ -67,7 +70,7 @@ public class InputParser implements Input {
 	}
 	void addItemAmount(Map<String, Integer> itemAmountMap, String itemCode, int amount) {
 		Integer originalAmount = itemAmountMap.get(itemCode);
-		if (originalAmount != null) {
+		if (originalAmount == null) {
 			originalAmount = 0;
 		}
 		itemAmountMap.put(itemCode, originalAmount + amount);

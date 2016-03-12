@@ -13,11 +13,21 @@ import java.util.Map;
 import com.ralvis.cashier.discount.Discount;
 
 public class MockItemDiscountRecordService implements ItemDiscountRecordService {
+	private static ItemDiscountRecordService instance = new MockItemDiscountRecordService();
 	private Map<String, Set<Discount>> maps = new HashMap<>();
 	private Discount topDiscount;
 	
-	public MockItemDiscountRecordService() {
+	public static ItemDiscountRecordService getInstance() {
+		return instance;
+	}
+	
+	private MockItemDiscountRecordService() {
 		this.topDiscount = Settings.getTopPriorityDiscount();
+	}
+	
+	public void reset() {
+		maps.clear();
+		topDiscount = Settings.getTopPriorityDiscount();
 	}
 	
 	@Override

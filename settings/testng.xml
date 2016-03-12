@@ -18,6 +18,36 @@
     </packages>
   </test>
   
+  <test name="testDiscount">
+    <packages>
+    	<package name="com.ralvis.cashier.discount"></package>
+    </packages>
+  </test>  
+  
+  <test name="testItem">
+    <packages>
+    	<package name="com.ralvis.cashier.item"></package>
+    </packages>
+  </test>
+  
+  <test name="testOrder">
+    <packages>
+    	<package name="com.ralvis.cashier.order"></package>
+    </packages>
+  </test>
+  
+  <test name="testInput">
+    <packages>
+    	<package name="com.ralvis.cashier.input"></package>
+    </packages>
+  </test>
+  
+  <test name="testSettings">
+    <packages>
+    	<package name="com.ralvis.cashier.setting"></package>
+    </packages>
+  </test>
+  
   <test name="testUtil">
     <packages>
     	<package name="com.ralvis.cashier.utils"></package>

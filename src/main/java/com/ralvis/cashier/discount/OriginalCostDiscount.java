@@ -7,10 +7,13 @@
 package com.ralvis.cashier.discount;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import com.ralvis.cashier.item.entity.Item;
 import com.ralvis.cashier.item.entity.ItemDetail;
 import com.ralvis.cashier.item.entity.NormalItemDetail;
+import com.ralvis.cashier.order.NormalOrder;
+import com.ralvis.cashier.order.Order;
 import com.ralvis.cashier.setting.Settings;
 
 public class OriginalCostDiscount implements Discount {
@@ -23,7 +26,17 @@ public class OriginalCostDiscount implements Discount {
 	}
 	
 	@Override
+	public int getPriority() {
+		return 0;
+	}
+	
+	@Override
 	public ItemDetail generateItemDetail(Item item, int amount) {
 		return new NormalItemDetail(item, amount);
+	}
+	
+	@Override
+	public Order generateOrder(List<ItemDetail> itemDetails) {
+		return new NormalOrder(itemDetails);
 	}
 }

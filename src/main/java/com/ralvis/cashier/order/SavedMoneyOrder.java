@@ -7,6 +7,7 @@
 package com.ralvis.cashier.order;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import com.ralvis.cashier.item.entity.ItemDetail;
 import com.ralvis.cashier.print.lineprinter.ItemPurchaseDetailWithSavedMoney;
@@ -14,7 +15,13 @@ import com.ralvis.cashier.print.printer.KeyMoneyWithUomPrinter;
 import com.ralvis.cashier.setting.Settings;
 
 public class SavedMoneyOrder extends Order{
-
+	public SavedMoneyOrder() {
+		
+	}
+	public SavedMoneyOrder(List<ItemDetail> itemDetails) {
+		super(itemDetails);
+	}
+	
 	@Override
 	public void buildDiscountPrinter() {
 		super.buildTotalLinePrinter();

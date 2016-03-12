@@ -16,4 +16,6 @@ public interface ItemDiscountRecordService {
 	void setTopPriorityDiscount(Discount discount);
 	
 	Discount getItemDiscount(String itemCode);
+	
+	void reset();
 }

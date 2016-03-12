@@ -72,4 +72,8 @@ public abstract class ItemDetail extends ItemDetailKeyFromSettings implements
 	public BigDecimal getTotalMoney() {
 		return total;
 	}
+	
+	public Discount getDiscount() {
+		return discount;
+	}
 }

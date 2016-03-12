@@ -6,10 +6,20 @@
  */
 package com.ralvis.cashier.order;
 
+import java.util.List;
+
+import com.ralvis.cashier.item.entity.ItemDetail;
 import com.ralvis.cashier.print.printer.KeyMoneyWithUomPrinter;
 import com.ralvis.cashier.setting.Settings;
 
 public class NormalOrder extends Order {
+	public NormalOrder() {
+		
+	}
+	public NormalOrder(List<ItemDetail> itemDetails) {
+		super(itemDetails);
+	}
+	
 	@Override
 	public void buildDiscountPrinter() {
 		linePrinters.add(new KeyMoneyWithUomPrinter(Settings.getItemsTotalKey(), 

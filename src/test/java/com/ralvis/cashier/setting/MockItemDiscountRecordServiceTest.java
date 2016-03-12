@@ -13,7 +13,8 @@ import com.ralvis.cashier.discount.Discount;
 public class MockItemDiscountRecordServiceTest {
 	@Test
 	public void testSetItemDiscount() {
-		MockItemDiscountRecordService service = new MockItemDiscountRecordService();
+		ItemDiscountRecordService service = MockItemDiscountRecordService.getInstance();
+		service.reset();
 		service.setItemDiscount("item1", DiscountFacotory.NORMAL_DISCOUNT);
 		Discount discount = service.getItemDiscount("item1");
 		Assert.assertEquals(discount, DiscountFacotory.NORMAL_DISCOUNT);
@@ -21,7 +22,8 @@ public class MockItemDiscountRecordServiceTest {
 	
 	@Test
 	public void testSetItem2Discount() {
-		MockItemDiscountRecordService service = new MockItemDiscountRecordService();
+		ItemDiscountRecordService service = MockItemDiscountRecordService.getInstance();
+		service.reset();
 		service.setItemDiscount("item1", DiscountFacotory.NORMAL_DISCOUNT);
 		service.setItemDiscount("item1", DiscountFacotory.MFORNFREE_DISCOUNT);
 		Discount discount = service.getItemDiscount("item1");
@@ -30,7 +32,8 @@ public class MockItemDiscountRecordServiceTest {
 	
 	@Test
 	public void testSetItemDefaultDiscount() {
-		MockItemDiscountRecordService service = new MockItemDiscountRecordService();
+		ItemDiscountRecordService service = MockItemDiscountRecordService.getInstance();
+		service.reset();
 		service.setItemDiscount("item1", DiscountFacotory.NORMAL_DISCOUNT);
 		service.setItemDiscount("item1", DiscountFacotory.ORIGINAL_DISCOUNT);
 		Discount discount = service.getItemDiscount("item1");
@@ -39,7 +42,8 @@ public class MockItemDiscountRecordServiceTest {
 	
 	@Test
 	public void testSetItemDefault2Discount() {
-		MockItemDiscountRecordService service = new MockItemDiscountRecordService();
+		ItemDiscountRecordService service = MockItemDiscountRecordService.getInstance();
+		service.reset();
 		service.setItemDiscount("item1", DiscountFacotory.NORMAL_DISCOUNT);
 		service.setItemDiscount("item1", DiscountFacotory.ORIGINAL_DISCOUNT);
 		service.setTopPriorityDiscount(DiscountFacotory.ORIGINAL_DISCOUNT);

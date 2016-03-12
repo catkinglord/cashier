@@ -25,7 +25,7 @@ public class SavedMoneyOrderTest {
 		
 		NormalDiscount normalDiscount95 = new NormalDiscount(95);
 		
-		ItemService itemService = new MockItemService();
+		ItemService itemService = MockItemService.getInstance();
 		Item coco = itemService.findByItemCode("ITEM000001");
 		ItemDetail cocoDetail = new NormalItemDetail(coco, 3);
 		

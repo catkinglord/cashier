@@ -17,7 +17,7 @@ import com.ralvis.cashier.item.service.MockItemService;
 public class BuyMForNFreeAmoutLinePrinterTest {
 	@Test
 	public void testPrint() {
-		ItemService itemService = new MockItemService();
+		ItemService itemService = MockItemService.getInstance();
 		Item item = itemService.findByItemCode("ITEM000001");
 		BuyMForNFreeItemDetail detail = new BuyMForNFreeItemDetail(item, 3, new BuyMForNFreeDiscount(2, 1));
 		BuyMForNFreeAmountLinePrinter printer = new BuyMForNFreeAmountLinePrinter(detail);

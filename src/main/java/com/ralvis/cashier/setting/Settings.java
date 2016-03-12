@@ -145,5 +145,19 @@ public class Settings {
 	public static String getItemsTotalKey() {
 		return "总计";
 	}
+
+	/**
+	 * 买m赠n折扣的priority
+	 */
+	public static int getBuyMForNDiscountPriority() {
+		return 2;
+	}
+
+	/**
+	 * 正常折扣的priority
+	 */
+	public static int getNormalDiscountPriority() {
+		return 1;
+	}
 	
 }

@@ -39,7 +39,7 @@ public class NormalOrderTest {
 	public void testPrintOneItem() {
 		Order order = new NormalOrder();
 		
-		ItemService itemService = new MockItemService();
+		ItemService itemService = MockItemService.getInstance();
 		Item coco = itemService.findByItemCode("ITEM000001");
 		ItemDetail cocoDetail = new NormalItemDetail(coco, 3);
 		order.addItemDetail(cocoDetail);
@@ -61,7 +61,7 @@ public class NormalOrderTest {
 	public void testPrintThreeItems() {
 		Order order = new NormalOrder();
 		
-		ItemService itemService = new MockItemService();
+		ItemService itemService = MockItemService.getInstance();
 		Item coco = itemService.findByItemCode("ITEM000001");
 		ItemDetail cocoDetail = new NormalItemDetail(coco, 3);
 		order.addItemDetail(cocoDetail);
