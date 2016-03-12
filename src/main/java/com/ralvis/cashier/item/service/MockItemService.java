@@ -19,8 +19,9 @@ public class MockItemService implements ItemService {
 		map.put("ITEM000001", new Item("ITEM000001", "可口可乐", "瓶", new BigDecimal("3.00")));
 		map.put("ITEM000002", new Item("ITEM000002", "羽毛球", "个", new BigDecimal("1.00")));
 		map.put("ITEM000003", new Item("ITEM000003", "苹果", "斤", new BigDecimal("5.50")));
+		map.put("ITEM000004", new Item("ITEM000004", "牛奶", "瓶", new BigDecimal("17.00")));
 		map.put("ITEM000005", new Item("ITEM000005", "面粉", "袋", new BigDecimal("50.00")));
-
+		map.put("ITEM000006", new Item("ITEM000006", "二锅头", "瓶", new BigDecimal("5.00")));
 	}
 	
 	public static ItemService getInstance() {
